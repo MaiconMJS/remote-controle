@@ -1,6 +1,6 @@
 package com.newoverride.controle.components
 
-import SpringButton
+import SpringPressReleaseButton
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
@@ -32,8 +32,9 @@ fun HomeController(
             verticalArrangement = Arrangement.spacedBy(Dimens.ColumSpacing)
         ) {
             Row {
-                SpringButton(
-                    onClick = clickUP,
+                SpringPressReleaseButton(
+                    onPress = clickUP,
+                    onRelease = clickSTOP,
                     text = "UP",
                     width = Dimens.ButtonWidth,
                     height = Dimens.ButtonHeight,
@@ -47,8 +48,9 @@ fun HomeController(
                 modifier = Modifier.fillMaxWidth(),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                SpringButton(
-                    onClick = clickLEFT,
+                SpringPressReleaseButton(
+                    onPress = clickLEFT,
+                    onRelease = clickSTOP,
                     text = "LEFT",
                     width = Dimens.ButtonWidth,
                     height = Dimens.ButtonHeight,
@@ -60,8 +62,9 @@ fun HomeController(
                         .weight(1f)
                         .padding(horizontal = Dimens.RowSpacing)
                 )
-                SpringButton(
-                    onClick = clickSTOP,
+                SpringPressReleaseButton(
+                    onPress = clickSTOP,
+                    onRelease = {},
                     text = "STOP",
                     width = Dimens.ButtonWidth,
                     height = Dimens.ButtonHeight,
@@ -73,8 +76,9 @@ fun HomeController(
                         .weight(1f)
                         .padding(horizontal = Dimens.RowSpacing)
                 )
-                SpringButton(
-                    onClick = clickRIGHT,
+                SpringPressReleaseButton(
+                    onPress = clickRIGHT,
+                    onRelease = clickSTOP,
                     text = "RIGHT",
                     width = Dimens.ButtonWidth,
                     height = Dimens.ButtonHeight,
@@ -88,8 +92,9 @@ fun HomeController(
                 )
             }
             Row {
-                SpringButton(
-                    onClick = clickDOWN,
+                SpringPressReleaseButton(
+                    onPress = clickDOWN,
+                    onRelease = clickSTOP,
                     text = "DOWN",
                     width = Dimens.ButtonWidth,
                     height = Dimens.ButtonHeight,
