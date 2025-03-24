@@ -1,5 +1,6 @@
 package com.newoverride.controle
 
+import UDPSender
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
@@ -16,11 +17,11 @@ class MainActivity : ComponentActivity() {
         setContent {
             ControleTheme {
                 HomeController(
-                    clickUP = { println("Button UP -> On") },
-                    clickLEFT = { println("Button LEFT -> On") },
-                    clickRIGHT = { println("Button RIGHT -> On") },
-                    clickDOWN = { println("Button DOWN -> On") },
-                    clickSTOP = { println("Button STOP -> On") }
+                    clickUP = { UDPSender.sendCommand("up") },
+                    clickLEFT = { UDPSender.sendCommand("left")},
+                    clickRIGHT = { UDPSender.sendCommand("right")},
+                    clickDOWN = { UDPSender.sendCommand("down")},
+                    clickSTOP = { UDPSender.sendCommand("stop")}
                 )
             }
         }
